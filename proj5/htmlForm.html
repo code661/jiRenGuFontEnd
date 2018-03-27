@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="login">
-    <form action="/abc" method="get">
+    <form action="/abc" method="post">
         <div class="username">
             <label>姓名</label>
             <input type="text" name="username" placeholder="请输入您的姓名">
@@ -32,8 +32,8 @@
             <input type="checkbox" name='hobby' value="playComputer">玩游戏
         </div>
         <div class="comment">
-            <label>评论</label>
-            <textarea name="comment" row='80' cols="20" placeholder="666666"></textarea>
+            <label for="id_comm">评论</label>
+            <textarea id='id_comm'name="comment" row='80' cols="20" placeholder="666666"></textarea>
         </div>
         <div class="myCar">
             <label>我的车</label>
@@ -43,7 +43,8 @@
                 <option value="foter">福特</option>
                 <option value="hyundai">现代</option>
             </select>
-            <button>提交</button>
+            <input name ='push' type="submit" value="ok">
+            <input name = 'reset' type="reset" value="no">
         </div>
     </form>
 </div>
