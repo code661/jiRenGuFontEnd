@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回头再来看HTML的表单</title>
+</head>
+<body>
+    <div class="header">
+        <h1>选择需要匹配的球队</h1>
+    </div>
+    <div class="form">
+        <form action="/matching_submit" method="post">
+            <div class="team-1">
+                <input id='huren' type="radio" name="team" value="湖人队">
+                <label for="huren">湖人队</label>
+            </div>
+            <div class="team-2">
+                <input type="radio" name="team" value="七七队">
+                <label>七七队</label>
+            </div>
+            <div class="f-data">
+                <label for="play-date">选择约战日期</label>
+                <input id='play-date'type="date" name="time">
+            </div>
+            <div class="play-ground">
+                <label>选择比赛场地</label>
+                <select name="play-ground">
+                    <option value="tianyi">天易篮球场（室外）</option>
+                    <option value="zhengfu">镇政府</option>
+                    <option value="yuhu">雨湖篮球馆</option>
+                </select>
+            </div>
+            <div class="s-mes">
+                <label>给对方球队留言</label>
+                <input type="text" name="mess">
+            </div>
+            <div class="submit-enter">
+                <input type="submit" value="确认约战🏀">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

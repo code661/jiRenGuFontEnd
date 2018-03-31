@@ -1,0 +1,42 @@
+.colorful {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn:hover {
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.steal {
+    background-color: #009688;
+    color: #fff;
+}
+
+.orange {
+    background-color: #ff9800;
+}
+
+.yellow {
+    background-color: #ffeb3b;
+}
+
+.red {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.green {
+    background-color:#4CAF50;
+    color: #fff;
+}

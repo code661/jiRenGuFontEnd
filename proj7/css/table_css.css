@@ -1,0 +1,49 @@
+.body {
+    font-family: arial;
+}
+
+.layout {
+    margin: 0 auto;
+    width: 600px;
+}
+
+.layout>table {
+    margin-top: 30px;
+}
+
+.table {
+    boder-collpase: collapse;
+    border-spacing: 0;
+    width: 100%;  /*把父容器宽度填满*/
+    border: 1px solid #ccc; /*在table元素中是设置表格的外边框的*/
+}
+
+.table tr {
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/*nth-child(even)匹配奇数行*/
+.table tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+.table th {
+    color: #fff;
+    background-color: #4CAF50;
+    padding: 8px 8px;
+    font-weight: bold;
+}
+
+.table td {
+    padding: 8px 8px;
+}
+
+.table.v2 {
+    border: none;
+}
+
+.table.v2 th {
+    background-color: #fff;
+    color: #000;
+}

@@ -1,0 +1,34 @@
+.tri {
+  width: 100px;
+  height: 30px;
+  background-color: #CCC;
+  border-top: 30px solid transparent; 
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  border-bottom: 30px solid orange;
+  border-radius: 20px 10px;
+  margin-bottom: 20px;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  border: none;
+  border-radius: 100px;
+  margin: 40px auto;
+}
+
+.box {
+  border: 2px black solid;
+  padding: 10px;
+  margin: 20px;
+}
+
+.fake-list {
+  padding-left: 30px;
+}
+
+.fake-list>span {
+  display: list-item;
+}

@@ -2,8 +2,16 @@ h1 {
     color: #323232;
 }
 
-#say {
-    color: #E7F5F2;
+#say-1{
+    color: #666;
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.you-say {
+    color: red;
+
 }
 
 .first,.p1 {
