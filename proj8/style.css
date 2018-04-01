@@ -1,0 +1,26 @@
+.bg-Blog {
+    width: 32px; height: 32px;
+    background: url('css_sprites.png') -63px -10px;
+}
+
+.bg-GitHub {
+    width: 33px; height: 32px;
+    background: url('css_sprites.png') -10px -10px;
+}
+
+.bg-twitter {
+    width: 32px; height: 32px;
+    background: url('css_sprites.png') -10px -62px ;
+}
+
+a {
+    display: inline-block;
+    padding-left: 40px;
+    width: 200px;
+    text-decoration: none;
+    color: #666;
+}
+
+div {
+    margin-top: 50px;
+}
