@@ -1,0 +1,64 @@
+/* 清除所有元素默认margin和padding*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 所有类为 nav_tag a标签 
+颜色、去除文字样式（下划线）、内边距10像素
+*/
+.nav_tag,a {
+    color: #666;
+    text-decoration: none;
+    padding: 10px 34px;
+    display: inline-block;
+}
+
+/* 类为next下的所有子元素为 nav──tag的类
+设置为 inline-block，宽度设为40像素*/
+.next .nav_tag {
+    display: inline-block;
+    width: 40px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li:hover {
+    background-color: rgba(0,0,0, 0.08);
+}
+
+nav {
+    width: 600px;
+    margin: 10px auto 0;
+    box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.16);
+    background-color: #f1f1f1;
+}
+
+nav>ul>li {
+    position: relative;
+}
+
+nav>ul::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.top>li {
+    float: left;
+}
+
+.next {
+    width: 100px;
+    position: absolute;
+    top: 42px;
+    background-color: white;
+    box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.16);
+    display: none;
+}
+
+.top>li:hover .next {
+    display: block;
+}
