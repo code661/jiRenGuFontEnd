@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片在容器内水平垂直居中，容器宽高大于图片宽高</title>
+    <style>
+        .img-box {
+            width: 900px;
+            height: 900px;
+            text-align: center;
+            vertical-align: middle;
+            border: 2px solid;
+        }
+
+        .img-box:after {
+            content: '';
+            height: 100%;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+
+        img {
+            background-color: pink;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="img-box">
+        <img src="https://jirengu.com/addons/theme/stv1/_static/app/index-new/imgs/logo.png">
+    </div>
+</body>
+</html>
