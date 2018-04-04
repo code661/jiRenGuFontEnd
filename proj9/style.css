@@ -1,64 +1,50 @@
-/* 清除所有元素默认margin和padding*/
-* {
+.layout {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.h-navbar {
+    color: #000;
+    background-color: #f1f1f1;
     margin: 0;
     padding: 0;
-}
-
-/* 所有类为 nav_tag a标签 
-颜色、去除文字样式（下划线）、内边距10像素
-*/
-.nav_tag,a {
-    color: #666;
-    text-decoration: none;
-    padding: 10px 34px;
-    display: inline-block;
-}
-
-/* 类为next下的所有子元素为 nav──tag的类
-设置为 inline-block，宽度设为40像素*/
-.next .nav_tag {
-    display: inline-block;
-    width: 40px;
-}
-
-nav li {
     list-style: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
 }
 
-nav li:hover {
-    background-color: rgba(0,0,0, 0.08);
-}
-
-nav {
-    width: 600px;
-    margin: 10px auto 0;
-    box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.16);
-    background-color: #f1f1f1;
-}
-
-nav>ul>li {
+.h-navbar>li {
+    float: left;
     position: relative;
 }
 
-nav>ul::after{
-    content: "";
+.h-navbar li a:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.h-navbar:after{
+    content: '';
+    display: block;
     clear: both;
-    display: block;
 }
 
-.top>li {
-    float: left;
-}
-
-.next {
-    width: 100px;
+.h-navbar .children {
     position: absolute;
-    top: 42px;
-    background-color: white;
-    box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.16);
+    top: 100%;
+    left: 0;
     display: none;
+    min-width: 160px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)!important;
 }
 
-.top>li:hover .next {
+.h-navbar>li:hover .children {
     display: block;
+}
+
+.h-navbar li a {
+    display: block;
+    padding:  10px 20px;
+    color: #333;
+    text-decoration: none;
 }
