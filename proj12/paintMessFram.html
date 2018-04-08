@@ -4,34 +4,43 @@
   <meta charset="UTF-8">
   <title>消息框</title>
   <style>
-    .mess {
+    .demo1 {
       width: 200px;
       height: 80px;
       border: 1px solid #777;
       margin: 40px;
     }
 
-    .tri {
+    .demo1:before {
+      content: '';
       width: 0px;
       height: 0px;
       border-top: 15px solid transparent;
       border-right: 15px solid transparent;
       border-left: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-    }
-
-    .t1 {
-      border-bottom-color: #777;
+      border-bottom: 15px solid #777;
       position: relative;
       left: 10px;
-      top: -30px;
+      top: -38px;
     }
     
     .demo2 {
+      width: 200px;
+      height: 80px;
+      border: 1px solid #777;
+      margin: 40px;
       position: relative;
     }
 
-    .t2 {
+    .demo2:before {
+      content: '';
+      position: relative;
+      width: 0px;
+      height: 0px;
+      border-top: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-left: 15px solid transparent;
+      border-bottom: 15px solid #777;
       border-bottom-color: red;
       transform: rotate(45deg);
       position: absolute;
@@ -40,10 +49,15 @@
     }
     
     .demo3 {
+      width: 200px;
+      height: 80px;
+      border: 1px solid #777;
+      margin: 40px;
       position: relative;
     }
 
-    .t3 {
+    .demo3:before {
+      content: '';
       width: 15px;
       height: 15px;
       border-top: 1px solid #777;
@@ -60,14 +74,11 @@
   </style>
 </head>
 <body>
-  <div class="mess demo1">
-    <div class="tri t1"></div>
+  <div class="demo1">
   </div>
-  <div class="mess demo2">
-    <div class="tri t2"></div>
+  <div class="demo2">
   </div>
-  <div class="mess demo3">
-    <div class="t3"></div>
+  <div class="demo3">
   </div>
 </body>
 </html>
