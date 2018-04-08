@@ -1,0 +1,85 @@
+.navbar {
+  height: 68px;
+  width: 100%;
+  position: absolute;
+}
+.navbar-logo {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.navbar-logo > a {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fed136;
+  padding: 15px 20px;
+  display: inline-block;
+}
+
+
+.navbar-nav {
+  float: right;
+  margin-right: 130px;
+}
+
+.navbar-nav a {
+  color: #FFF;
+  font-weight: 400;
+  margin: 30px 5px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.navbar-nav a:hover {
+  color: #fed136;
+}
+
+.navbar-nav > li {
+  display: inline-block;
+}
+
+header {
+  background-image: url(http://book.jirengu.com/jirengu-inc/jrg-tehui/homework/%E8%8B%A5%E6%84%9A/16/img/header-bg.jpg);
+  background-repeat: none;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+  height: 100%;
+  color: #FFF;
+}
+
+header .intro-text {
+  padding-top: 300px;
+}
+
+header .intro-text .intro-lead-in {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 22px;
+}
+
+header .intro-text .intro-heading {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 75px;
+  font-weight: 700;
+  margin-bottom: 80px;
+  margin-top: 50px;
+}
+
+#services .text-primary {
+  color: #fed136;
+}
+
+#services > ul {
+  margin-top: 80px;
+}
+
+#services > ul > li {
+  display: inline-block;
+  width: calc(33.33% - 45px);
+  text-align: center;
+  padding: 20px;
+}
+
+

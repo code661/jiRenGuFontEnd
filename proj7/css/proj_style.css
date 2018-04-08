@@ -41,8 +41,8 @@ body{
     border-radius: 3px;
 }
 
-.proj-btn a:hover {
-    opacity: 0.8px;
+.proj-btn:hover {
+    opacity: 0.1px;
 }
 
 
