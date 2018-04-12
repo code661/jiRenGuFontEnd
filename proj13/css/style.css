@@ -1,7 +1,7 @@
 .navbar {
   height: 68px;
-  width: 100%;
   position: absolute;
+  width: 100%;
 }
 .navbar-logo {
   display: inline-block;
@@ -24,6 +24,7 @@
 
 .navbar-nav a {
   color: #FFF;
+  font-size: 15px;
   font-weight: 400;
   margin: 30px 5px;
   display: inline-block;
@@ -67,12 +68,20 @@ header .intro-text .intro-heading {
   margin-top: 50px;
 }
 
+#services {
+  margin: 0 80px;
+}
 #services .text-primary {
   color: #fed136;
 }
 
 #services > ul {
-  margin-top: 80px;
+  margin-top: 50px;
+}
+
+.section-subheading {
+  font-size: 15px;
+  font-style: italic;
 }
 
 #services > ul > li {
@@ -81,5 +90,4 @@ header .intro-text .intro-heading {
   text-align: center;
   padding: 20px;
 }
-
 
