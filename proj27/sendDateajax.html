@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用ajax发送日期</title>
+</head>
+<body>
+  <select name="year" id='year'>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+  </select>
+  <select name="mouth" id="mouth">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+  <select name="day" id="day">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select>
+  <button id='btn'>发送</button>
+  <span id="result"></span>
+  <script type="text/javascript" src="ajax.js"></script>
+  <script>
+    btn.onclick = function () {
+      ajax({
+        url:'form.php',
+        data:{year:year.value,mouth:mouth.value,day:day.value},
+        callback: function(data){
+          result.innerHTML = data
+        }
+      })
+    }
+  </script>
+</body>
+</html>

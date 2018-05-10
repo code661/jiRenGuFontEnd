@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取图片真实宽高</title>
+</head>
+<body>
+  <div id='imgBox'>
+    图片实际宽高: 544 * 184px<br>给图片的样式加了width = 100px
+    <img id="logo" style="width: 100px" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">
+  </div>
+  <script type="text/javascript">
+
+    function getImg(imgEle){
+    newImg = new Image()
+    newImg.src = imgEle.src
+    window.onload = function(){
+        console.log(newImg.width)
+        console.log(newImg.height)
+      }
+    }
+    getImg(logo)
+  </script>
+</body>
+</html>

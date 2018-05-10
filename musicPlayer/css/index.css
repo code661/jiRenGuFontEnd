@@ -1,0 +1,117 @@
+.player {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    width: 430px;
+    border-radius: 15px;
+    box-shadow: 3px 10px 29px 0 rgba(71, 68, 67, 0.5);
+    border-color: transparent;
+    background-color: #EDF0F1;
+}
+
+.music-cover {
+    width: 100%;
+    height: 300px;
+}
+
+.music-cover img {
+    height: 100%;
+    width: 100%;
+}
+
+.music-info {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.music-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+.music-title::before {
+    content: '🎵 '
+}
+
+.artist {
+    color: #666;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 50px;
+}
+.artist::before {
+    content: '🎙️'
+}
+
+.progress-bar{
+    position: relative;
+    padding: 40px;
+}
+
+.progress-bar .progress-total {
+    margin: 0 30px;
+    width: 300px;
+    height: 5px;
+    border-radius: 3px;
+    background:#404B69;
+    position: absolute;
+
+}
+
+.current-time {
+    position: relative;
+    top: -10px;
+    left: -35px;
+    font-size: 13px;
+    color: #666;
+}
+
+.duration {
+    position: relative;
+    top: -10px;
+    right: -280px;
+    font-size: 13px;
+    color: #666;
+}
+
+.progress-bar .progress-now {
+    margin: 0 30px;
+    height: 5px;
+    border-radius: 3px;
+    box-shadow: 0 2px 20px 0 rgba(102, 102, 102, 0.753);
+    background-color:#8EA6B4;
+    position: absolute;
+}
+
+.control-panel {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.control-panel .play-btn {
+    text-shadow: 2px 2px 8px;
+    padding: 20px;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.control-panel .forward-btn {
+    display: inline-block;
+    font-size: 40px;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.control-panel .next-btn {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.music-list {
+    position: relative;
+    left: 60px;
+    border: 1px solid;
+}
