@@ -34,7 +34,7 @@ function start() {
 function getData(callback) {
     
     $.ajax({
-        url: 'http://platform.sina.com.cn/slide/album_tech',
+        url: 'https://platform.sina.com.cn/slide/album_tech',
         dataType: 'jsonp',
         jsonp:"jsoncallback",
         data: {
