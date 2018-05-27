@@ -107,10 +107,17 @@ var Fm = {
         this.$container = $('#page-music main')
 
         this.bind()
+
+        eventCenter.fire('select_album', {
+            channel_id: this.channel_id,
+            channel_name: this.channel_name
+        })
     },
 
+    
     bind: function(){
         var _this = this
+
         eventCenter.on('select_album', function(e, data){
             _this.channel_id = data.channelid
             _this.channel_name = data.channelname
