@@ -1,0 +1,20 @@
+html,body {
+    font-size: 12px;
+    line-height: 1.2;
+    background-color: #fff;
+    height: 100%;
+}
+
+a {
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+}
+
+a:visited {
+    color: #999;
+}
+.clearfix::before {
+    content: '';
+    clear: both;
+    display: block;
+}

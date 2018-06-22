@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>插槽的使用</title>
+  <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <blog-post>
+      <!-- 具名插槽 -->
+      <h3 slot="title">Hello Vue!</h3>
+      <p>Use component slot</p>
+      <span slot-scope="props">{{ props.text }}</span>
+    </blog-post>
+  </div>
+  <script>
+    let app = new Vue({
+      el: "#app",
+      data: {
+
+      },
+      components: {
+        "blog-post": {
+          template: `
+            <div>
+              <div><slot name='title' text="doSomeThing">默认标题</slot></div>
+              <slot text="Nice!"></slot>
+              <div><slot name='footer'>Copyright</slot></div>
+            </div>
+          `
+        }
+      },
+      mounted: function(){
+        console.log(this.$children[0].$slots.title[0].elm.innerText)
+      }
+    })
+  </script>
+</body>
+</html>

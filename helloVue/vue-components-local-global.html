@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组件的全局注册以及局部注册</title>
+  <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <my-component></my-component>
+    <app-component></app-component>
+    <button @click="plus">{{ counter }}</button>
+    <button @click="plus">{{ counter }}</button>
+
+  </div>
+  <script>
+    // 全局注册
+    Vue.component('my-component',{
+      template: "<span>⚙我是全局一个组件</span>"
+    })
+
+    let app = new Vue({
+      el: '#app',
+      data: {
+        counter: 0
+      },
+      components: {
+        "app-component": {
+          template: "<p>🔧 我是 App 内的局部组件<button @click='count ++'>{{ count }}{{test}}</button></p>",
+          // 组件中的 data 必须是一个方法
+          data: function(){
+            return {
+                count: 0,
+                test: 'hello'
+              }
+            }
+        }
+      },
+      methods: {
+        "plus": function(){
+          this.counter ++
+        }
+      }
+    })
+  </script>
+</body>
+</html>

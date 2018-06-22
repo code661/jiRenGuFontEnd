@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>第一个Vue App</title>
+  <script src="http://unpkg.com/vue"></script>
+  <style>
+    .active {
+      color: aqua
+    }
+  </style>
+</head>
+<body>
+  <div id='app'>
+    <!-- // Mustache -->
+    <p>{{ message }}</p>
+    <!-- Modify message in console, the span's data not change -->
+    <span v-once>{{ message}}</span>
+    <!-- raw HTML -->
+    <p>Using v-html diretive:<span v-html='rawHtml'></span></p>
+    <!-- Mustache can't use in html attribute -->
+    <div class={{dynamicClass}}>Mustache in HTML attrubute</div>
+    <div v-bind:class="dynamicClass">Use v-bind command</div>
+    <button v-bind:disabled='isButtonDisabled'>Button</button>
+    <!-- use javascript statements -->
+    <p>{{message==='ok'?'ok':'NO'+''}}</p>
+    <!-- vue Directives -->
+    <p v-if='seen'>现在你看到我了</p>
+    <p v-on:click="doSomething">{{message}}</p>
+    <p @click="doSomething">v-on缩写成"@" {{message}}</p>
+    <p>{{ updateTime }}</p>
+    <p>{{ time | formatDate }}</p>
+
+  </div>
+  <script>
+    var datePlus = function(value){
+      return value < 10 ? '0' + value : value
+    }
+    let app = new Vue({
+      el: '#app',
+      data: {
+        dynamicClass: 'active',
+        message: 'hello Vue!',
+        rawHtml: "<span style='color:red'>This should be red</span>",
+        isButtonDisabled: "true",
+        seen: "false",
+        time: "现在时间",
+        timer: null
+      },
+      methods:{
+        doSomething :function doSomething(){
+          this.message += '⭐️'
+        },
+        uptime: function(){
+          this.time = new Date()
+        }
+      },
+      computed: {
+        updateTime: function(){
+          return new Date()
+        }
+      },
+      filters: {
+        formatDate: function(value){
+          let now = new Date(value)
+          let year = now.getFullYear()
+          let month = now.getMonth() + 1
+          let day = now.getDate()
+          let hour = now.getHours()
+          let min = now.getMinutes()
+          let sec = datePlus(now.getSeconds())
+          return year + "年" + month + "月" + day + "日" + hour + "时" + min + "分" + sec + "秒"
+        }
+      },
+      mounted: function(){
+        var _this = this
+        this.timer = setInterval(function(){
+          _this.time = new Date()
+        },1000)
+      },
+      beforeDestory: function(){
+        if(timer) {
+          clearInterval(this.timer)
+        }
+      }
+    })
+  </script>
+</body>

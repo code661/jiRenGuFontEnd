@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>v-model 和 表单</title>
+  <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id='text'>
+    <h2>单行文本</h2>
+    <input type="text" v-model.lazy.number="msg" value="hello" placeholder="edit me"> <!-- // 这个value="hello" 会被忽略 -->
+    <p>您输入了：{{ msg }}</p>
+  </div>
+  <div id="textArea">
+    <h2>多行文本</h2>
+    <textarea v-model.trim="msg" cols="20" rows="10" placeholder="edit me"></textarea>
+    <p>您输入了：{{ msg }}</p>
+  </div>
+  <hr>
+  <div id="checkbox">
+    <h2>单个复选框</h2>
+    <input id="first"type="checkbox" v-model="toggle" true-value="A" false-value="B">
+    <label for="first">值绑定 {{ toggle }}</label>
+    <input id='second' type="checkbox" v-bind="checked">
+    <label for="second">{{ checked }}</label>
+  </div>
+
+  <div id="multiCheckbox">
+      <h2>多个复选框</h2>
+      <form action="/abc" method="get">
+        <h3>购物清单</h3>
+        <input type="checkbox" name="apple" id="apple" value="🍎" v-model="checkedArr">
+        <label for="apple">🍎 苹果</label>
+        <input type="checkbox" name="banana" id="banana" value="🍌" v-model="checkedArr">
+        <label for="banana">🍌 香蕉</label>
+        <input type="checkbox" name="orange" id="orange" value="🍊" v-model="checkedArr">
+        <label for="orange">🍊 橙子</label>
+        <p>您选择了:{{ checkedArr}}</p>
+        <input type="submit" value="确认购买">
+      </form>
+    </div>
+    <hr>
+
+    <div id="multiRadio">
+      <h2>多个单选按钮</h2>
+      <input type="radio" id="one" value="one" v-model="picked">
+      <label for="one">One</label>
+      <input type="radio" id="two" value="two" v-model="picked">
+      <label for="two">Two</label>
+      <p>您选择了: {{ picked }}</p>
+    </div>
+
+    <div id="radio">
+      <h2>单个单选按钮</h2>
+      <span>值绑定，当选中时vm.pick === vm.a</span><br>
+      <input type="radio" name="bar" v-model="pick" v-bind:value="a">
+      {{ pick }} {{ a }} <br>
+      <!-- 也可以使用 v-model="whether" -->
+      <input type="radio" name="foo"v-bind:checked="whether"> 
+      {{ whether }}
+    </div>
+    <hr>
+
+    <div id="select">
+      <h2>单选选择框</h2>
+      <select v-model="selected">
+        <!-- 有value直接优先匹配一个value值，没有value就匹配一个text值 -->
+        <option value="test">🍎 Apple</option>
+        <option>🍌 Banana</option>
+        <option>🍊 Orange</option>
+        <!-- 值绑定 -->
+        <option v-bind:value="{item: 'watermelon'}">🍉</option>
+      </select>
+      <span> 您选择了: {{ selected }}</span>
+    </div>
+
+    <div id="mulitSelect">
+      <h2>多选选择框</h2>
+      <select v-model="selectedArr" multiple>
+        <option>🍎 Apple</option>
+        <option>🍌 Banana</option>
+        <option>🍊 Orange</option>
+      </select>
+      <span> 您选择了 {{ selectedArr }} </span>
+    </div>
+
+  <script>
+    let text = new Vue({
+      el: "#text",
+      data: {
+        msg: ""
+      }
+    })
+
+    let textArea = new Vue({
+      el: "#textArea",
+      data: {
+        msg: "默认值"
+      }
+    })
+
+    let checkbox = new Vue({
+      el: "#checkbox",
+      data: {
+        checked: true,
+        toggle: 'A'
+      },
+    })
+
+    let multiCheckbox = new Vue({
+      el: "#multiCheckbox",
+      data: {
+        checkedArr: []
+      }
+    })
+
+    let multiRadio = new Vue({
+      el: "#multiRadio",
+      data: {
+        picked: ""
+      }
+    })
+
+    let radio = new Vue({
+      el: "#radio",
+      data: {
+        whether: true,
+        a: '已选择',
+        pick: '用户未选择'
+      }
+    })
+
+    let select = new Vue({
+      el: "#select",
+      data: {
+        selected: "🍎 Apple"
+      }
+    })
+
+    let multiple = new Vue({
+      el: "#mulitSelect",
+      data: {
+        selectedArr: []
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>计算属性</title>
+  <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id='app'>
+    购物车中的总价{{ prices }}
+  </div>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        package1:[
+          {
+            name: "iPhone 8",
+            price: 5288,
+            count: 2
+          },
+          {
+            name: "iPad Air3",
+            price: 3388,
+            count: 1
+          }
+        ],
+        package2:[
+          {
+            name: "iPhone X",
+            price: 6300,
+            count: 2
+          },
+          {
+            name: "pen",
+            price: 10,
+            count: 4
+          }
+        ]
+      },
+      computed: {
+        prices: {
+          get:function(){
+          let totalprices = 0;
+            for (let i =0;i < this.package1.length; i++){
+              totalprices += this.package1[i].price * this.package1[i].count
+            }
+            for (let j =0;j < this.package2.length; j++){
+              totalprices += this.package2[j].price * this.package2[j].count
+            }
+            return totalprices
+          },
+          set: function(value){
+            this.package2[0].count = value
+            console.log('iPhone X 数量：'+ this.package2[0].count)
+          }
+        }
+      }  
+    })
+  </script>
+</body>
+</html>

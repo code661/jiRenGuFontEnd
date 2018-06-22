@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>利用自定义事件，子组件给父组件传递数据</title>
+  <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    {{ total }}
+    <balance-component @change="handleChange"></balance-component>
+  </div>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data: {
+        total: 0
+      },
+      components: {
+        "balance-component": {
+          template: `
+          <div>
+            <button @click="increase">💵</button>
+            <button @click='reduce'>📤</button>
+          </div>
+          `,
+          data: function (){
+            return {
+              balance: 0
+            }
+          },
+          methods: {
+            increase: function(){
+              this.balance += 1000
+              this.$emit('change',this.balance)
+            },
+            reduce: function(){
+              this.balance -= 1000
+              this.$emit('change',this.balance)
+            }
+          }
+        }
+      },
+      methods: {
+        handleChange: function(balance){
+          this.total = balance
+        }
+      }
+    })
+  </script>
+</body>
+</html>

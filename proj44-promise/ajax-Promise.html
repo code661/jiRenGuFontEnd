@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ajax函数</title>
+</head>
+<body>
+  <script>
+    function ajax(opt){
+      return new Promise(function(resolve, reject){
+        var url = opt.url
+        var type = opt.type || 'GET'
+        var dataType = opt.dataType || 'json'
+        var data = opt.data || {}
+
+        var dataStr = []
+        for (var key in data){
+          dataStr.push(key + '=' + data[key])
+        }
+
+        if (type == 'GET'){
+          url += '?' + dataStr
+        }
+
+        var xhr = new XMLHttpRequest()
+        xhr.open(type, url, true)
+        xhr.onload = function(){
+          if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304){
+            if (dataType == 'json'){
+              resolve(JSON.parse(xhr.responseText))
+            } else {
+              resolve(xhr.responseText)
+            }
+          } else {
+            reject()
+          }
+        }
+        xhr.onerror = reject
+        if (type === 'POST'){
+          xhr.send(dataStr)
+        } else {
+          console.log('send...')
+          xhr.send()
+        }
+      })
+    }
+    
+    ajax({
+      url: 'http://api.jirengu.com/getWeather.php',
+      data: {
+        city: '北京'
+      },
+      dataType:'txt'
+    }).then(function(ret){
+      console.log(ret)
+    }).catch(function(){
+      console.log('服务器异常')
+    })
+
+  </script>
+</body>
+</html>

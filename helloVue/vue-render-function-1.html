@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>不使用 render 函数</title>
+  <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <h-component :header-level="header">Hello Vue!</h-component>
+    <input type="text" v-model.number="header">
+  </div>
+
+  <template id="h-dom">
+    <div>
+      <h1 v-if="headerLevel == 1">
+        <slot></slot>
+      </h1>
+      <h2 v-if="headerLevel == 2">
+        <slot></slot>
+      </h2>
+      <h3 v-if="headerLevel == 3">
+        <slot></slot>
+      </h3>
+    </div>
+  </template>
+
+  <script>
+    Vue.component("h-component",{
+      props: ["headerLevel"],
+      template: "#h-dom"
+    })
+    let app = new Vue({
+      el: "#app",
+      data: {
+        header: 1
+      }
+    })
+  </script>
+</body>
+</html>

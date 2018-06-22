@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>感受回调函数</title>
+</head>
+<body>
+  <script>
+    function multiply(input){
+      return new Promise(function(reslove, reject){
+        console.log('calculating ' + input + '*' + input)
+        setTimeout(reslove, 1000, input * input)
+      })
+    }
+
+    function add(input){
+      return new Promise(function(resolve, reject){
+        console.log('calculating' + input + '+' + input)
+        setTimeout(resolve, 1000, input + input)
+      })
+    }
+
+    var p = new Promise(function(resolve, reject){
+      console.log('start new Promise...')
+      resolve(123)
+    })
+
+    p.then(multiply)
+     .then(add)
+     .then(multiply)
+     .then(function(result){console.log('result:'+result)})
+  </script>
+</body>
+</html>

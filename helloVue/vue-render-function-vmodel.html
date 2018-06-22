@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>在 render 函数中使用 vmodel指令</title>
+  <script src="http://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <my-component :name="inputText" v-model="inputText"></my-component>
+    {{ inputText }}
+  </div>
+  <script>
+    let app = new Vue({
+      el: "#app",
+      data: {
+        inputText: "hello Vue!"
+      },
+      components: {
+        "my-component": {
+          render: function(createElement){
+            let _this = this
+            return createElement('input',{
+             attrs: {
+               value: _this.name
+             },
+             on: {
+               input: function(event){
+                 _this.$emit('input',event.target.value)
+               }
+             }
+            })
+          },
+          props: ["name"]
+        }
+      },
+      // methods: {
+      //   update: function(value){
+      //     this.inputText = value
+      //   }
+      // }
+    })
+  </script>
+</body>
+</html>
