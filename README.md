@@ -54,7 +54,7 @@
 
 # 第 25 课：事件
 * [了解事件冒泡](https://code661.github.io/jiRenGuFontEnd/proj25-js-event/eventPropagation.html)
-* [组织事件冒泡](https://code661.github.io/jiRenGuFontEnd/proj25-js-event/stopPropagation.html)
+* [阻止事件冒泡](https://code661.github.io/jiRenGuFontEnd/proj25-js-event/stopPropagation.html)
 
 # 第 26 课：CSS动画 & JS 动画
 [实现3D翻转效果的登录框](https://code661.github.io/jiRenGuFontEnd/proj26-3D-login-dialog/login.html#)
