@@ -92,7 +92,7 @@
 [🐱 预览地址](https://code661.github.io/jiRenGuFontEnd/baidu-input.html)
 
 # CSS 练习：用浮动来实现各种布局
-[🐱 预览地址](view-source:https://code661.github.io/jiRenGuFontEnd/css-float-layout.html)
+[🐱 预览地址](https://code661.github.io/jiRenGuFontEnd/css-float-layout.html)
 
 
 
