@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>百度搜索框</title>
+  <style>
+    *{margin: 0; padding: 0}
+    *{box-sizing: border-box}
+    ul,ol{list-style: none}
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
+    .clearfix::after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .wrapper {
+      display: flex;
+      position: relative;
+    }
+    .inputWrapper {
+      position: relative;
+      display: inline-block;
+      float: left;
+    }
+    .suggestion {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border: 1px solid #B8B8B8;
+      border-top: none;
+      width: calc(100% - 1px);
+      font-size: 13px;
+      box-shadow: 1px 2px 3px -1px#ccc;
+    }
+
+    .suggestion > li {
+      padding: 5px 8px;
+    }
+    .suggestion > li:hover {
+      background-color: #F0F0F0;
+    }
+    .iconBox {
+      position: absolute;
+      top:0;
+      right: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+    }
+    .iconBox svg.icon {
+      fill: #999999;
+      width: 23px; height: 23px;
+    }
+    .iconBox svg.icon:hover{
+      cursor: pointer;
+      fill: #4791ff;
+    }
+    .iconBox .splitLine {
+      border-left: 1px solid;
+      display: inline-block;
+      width: 0; height: 15px;
+      margin: 0 6px;
+      color: #E7E7E7;
+    }
+    .inputWrapper + button {
+      float: left;
+    }
+
+    .inputWrapper > input[type='text'] {
+      border: 1px solid #B8B8B8;
+      padding-left: 14px;
+      font-size: 15px;
+      width: 539px;
+      height: 34px;
+      line-height: 34px;
+    }
+    .inputWrapper > input[type='text']:focus {
+      border: 1px solid #4791ff;
+      outline: none;
+    }
+
+    .inputWrapper + button {
+      background-color: #3385FF;
+      width: 100px;
+      border: none;
+      position: relative;
+      left: -1px;
+      color: #FFFFFF;
+      font-size: 15px;
+    }
+
+    .inputWrapper + button:hover{
+      cursor: pointer;
+      box-shadow: 1px 2px 3px -1px#ccc;
+      background-color: #317ef3;
+    }
+    .inputWrapper + button:focus {
+      outline: none;
+    }
+    ul.inputing {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper clearfix">
+    <span class="inputWrapper">
+      <input id='inputField' type="text">
+      <span class="iconBox">
+        <span>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-mic"></use>
+          </svg>
+        </span>
+        <span class="splitLine"></span>
+        <span>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-aui-icon-camera"></use>
+          </svg>
+        </span>
+      </span>
+    </span>
+    <button>百度一下</button>
+    <ul id="suggestion" class="suggestion">
+      <li>选项1</li>
+      <li>选项2</li>
+      <li>选项3</li>
+    </ul>
+  </div>
+  <script src="//at.alicdn.com/t/font_613071_itegvitfck8.js"></script>
+  <script>
+    inputField.oninput = function(e){
+      if(inputField.value) {
+        suggestion.classList.add('inputing')
+      } else {
+        suggestion.classList.remove('inputing')
+      }
+    }
+
+    window.addEventListener('click',function(e){
+      if (e.target.tagName == 'BODY') {
+        suggestion.classList.remove('inputing')
+      }
+    })
+  </script>
+</body>
+</html>
