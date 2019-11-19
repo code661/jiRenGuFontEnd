@@ -79,10 +79,9 @@
 ![](http://p66qa9vy4.bkt.clouddn.com/shotsnapp-1532901240.886.png)
 
 # 第 43 课：面向对象实战之轮播
-通过实践理解面向对象编程的思想
-
+通过实践理解面向对象编程的思想  
+![example_img](https://i.loli.net/2019/11/19/Hr95zvjXlEw4YVm.jpg)
 [图片轮播组件](https://code661.github.io/jiRenGuFontEnd/proj43-carousel-slide-oop)
-
 ![](http://p66qa9vy4.bkt.clouddn.com/2018-07-30%2005.57.34.gif)
 
 # 第 44 课：Promise 的用法
